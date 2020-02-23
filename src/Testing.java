@@ -45,7 +45,6 @@ public class Testing {
         Path currentRelativePath = Paths.get("");
         String currentPath = currentRelativePath.toAbsolutePath().toString();
         pathPrefix = currentPath+se;
-        System.out.println(currentPath+se);
         set3Folders();
         setGRPs();
         int count = 0;
@@ -74,14 +73,12 @@ public class Testing {
                         
                         File fO = new File(pathPrefix+OldFolder+OldGRP[n]);//same file w/ fTr, but not in the same folder
                         
-                       // System.out.println("Current Translation File is "+OldGRP[n]);
                         SAXReader readerO = new SAXReader();
                         Document docO = readerO.read(fO);
                         Element rootO = docO.getRootElement();
                         //run old xml
                         for (Iterator<Element> itOs = rootO.elementIterator(); itOs.hasNext();) {
                             Element definiOGrp = itOs.next();
-                            //System.out.println("Current Old File is "+OldGRP[n]);
                             for (Iterator<Element> itO = definiOGrp.elementIterator("TextStringDefinition"); itO.hasNext();) {
                                 Element elementO = itO.next();
                                 Attribute instanceIDO = elementO.attribute("InstanceID");
@@ -97,7 +94,6 @@ public class Testing {
                                     //run translated xml
                                     File fTr = new File(pathPrefix+translatedFolder+OldGRP[n]);
                                     SAXReader readerTr = new SAXReader();
-                                        System.out.println("before read old ");
                                     Document docTr = readerTr.read(fTr);
                                     Element rootTr = docTr.getRootElement();
                                     for (Iterator<Element> itTrs = rootTr.elementIterator(); itTrs.hasNext();) {
@@ -111,7 +107,6 @@ public class Testing {
                                                 update[updateSize][0] = instanceIDTr.getValue();
                                                 update[updateSize][1] = attributeTr.getValue();
                                                 update[updateSize][2] = instanceID.getValue();
-                                                System.out.println("updateSize:"+updateSize);
                                                 System.out.println(""+instanceID.getValue()+" To " + instanceIDTr.getValue()+"");
                                                 System.out.println("'"+attribute.getValue()+"' To '" + attributeTr.getValue()+"'");
                                                 System.out.println(update[updateSize][0]+" and " + update[updateSize][1]);
@@ -167,8 +162,6 @@ public class Testing {
                 boolean found = false;
                 for(int i =0;i<size;i++){
                     if(list[i][1]!=null){
-                    System.out.println("instanaceID = "+instanceID.getValue()+", list "+list[i][0]+", list original "+list[i][2]);
-                    System.out.println("TextString = "+attribute.getValue()+", list "+list[i][1]);
                     }
                     if(instanceID.getValue().equals(list[i][2])){
                         xmlStr += "InstanceID=\""+list[i][2]+"\" TextString=\""+list[i][1]+"\"";
@@ -188,13 +181,10 @@ public class Testing {
         }
         xmlStr += "</TextStringDefinitions>\n" +
 "</StblData>";
-        System.out.println(xmlStr);
         //Document document = DocumentHelper.parseText(xmlStr);
         Path currentRelativePath = Paths.get("");
         String currentPath = currentRelativePath.toAbsolutePath().toString();
-       // System.out.println(currentPath);
         String tempPath = currentPath+se+"converted"+fileName;
-        System.out.println(tempPath);
         File file = new File(tempPath);
         //file.getParentFile().getParentFile().mkdirs();
         file.getParentFile().mkdirs();
@@ -235,31 +225,20 @@ public class Testing {
             if(folderCat[3]!=null){
                 isLoose = (folderCat[3].equalsIgnoreCase("0")||folderCat[3].equalsIgnoreCase("false")?false:true);
             }
-            System.out.println("Loose is "+isLoose);
     }
     public static void setGRPs()throws Exception{
-            //System.out.println(pathPrefix+NewestFolder);
             File f = new File(pathPrefix+NewestFolder);
             setGRP(f,"",1);
-            System.out.println();
             f = new File(pathPrefix+OldFolder);
             setGRP(f,"",2);
-            System.out.println();
             f = new File(pathPrefix+translatedFolder);
             setGRP(f,"",3);
-            for(int i=0;i<NewestGRPCount;i++){
-                System.out.println("set grps new "+pathPrefix+NewestFolder+NewestGRP[i]);
-            }
-            for(int i=0;i<OldGRPCount;i++){
-                System.out.println("set grps old "+pathPrefix+OldFolder+OldGRP[i]);
-            }
     }
     public static void setGRP(File f,String parent,int type) throws Exception{
             File[] files = f.listFiles();
 
             // Get the names of the files by using the .getName() method
             for (int i = 0; i < files.length; i++) {
-                //System.out.println(files[i].getName());
                 if(files[i].isDirectory()){
                     setGRP(files[i],parent+se+files[i].getName(),type);
                 }else if(files[i].getName().endsWith(".xml")){
