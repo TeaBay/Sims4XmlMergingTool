@@ -1,5 +1,6 @@
 # XmlMergingToolForSims4
 it is a tool for merging old translation into new xml
+
 使用方法:
 1.放置三個文件夾於本程式根目錄, 分別為
 	a.專門放置最新的mod文字檔案的資料夾(原文語言)
