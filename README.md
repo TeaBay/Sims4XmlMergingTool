@@ -37,6 +37,7 @@ it is a tool for merging old translation into new xml
 
 4.文字檔案必需是.xml,並是sims4 mod的STBL資料格式。
 如:
+
 	<?xml version="1.0" encoding="utf-8"?>
 	<StblData>
 	  <TextStringDefinitions>
