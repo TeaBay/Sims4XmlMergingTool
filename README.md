@@ -3,6 +3,7 @@ it is a tool for merging old translation into new xml
 
 使用方法:
 1.放置三個文件夾於本程式根目錄, 分別為
+
 	a.專門放置最新的mod文字檔案的資料夾(原文語言)
 	b.專門放置舊的mod文字檔案的資料夾(原文語言,必與a相同語言)
 	c.專門放置舊的mod已翻譯文字檔案的資料夾(檔案名稱﹑父資料夾結構和數量必與b相同)。*
