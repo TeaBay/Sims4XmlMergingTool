@@ -74,7 +74,7 @@ it is a tool for merging old translation into new xml
 
 免責聲明:
 本人對一切使用或下載本程式或任何關連所造成的損失概不負責，並且不對本程式功能作出任何種類的保證﹑陳述或協議，請用家自行承擔其風險。
-並請用家自行判斷所下載之途徑(如從網頁﹑電郵)的安全性和可靠度，本人同樣對此造成的損失概不負責。
+並請用家自行判斷所下載之途徑(如從網頁﹑電郵等等)的安全性和可靠度，本人同樣對此造成的損失概不負責。
 
 
 Guidelines:
@@ -142,7 +142,7 @@ Basically, if the translator is based on the original mod file(old mod folder), 
 
 Disclaimer:
 I am not responsible for any loss caused by using or downloading this program or any related, and I do not make any kind of guarantee, statement or agreement for the function of this program, please use it at your own risk.
-Users are also required to validate the security and reliability of the downloading source (such as from web pages and emails), and I am also not responsible for the losses caused by it.
+Users are also required to validate the security and reliability of the downloading source (such as from web pages and emails and so on), and I am also not responsible for the losses caused by it.
 
 TeaBay--Copyright @ 2020
 
